@@ -1,8 +1,9 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
+int main()
+{
     string name;
-    cin>> name;
-    cout<<name;
+    cin >> name;
+    cout << name;
     return 0;
 }
