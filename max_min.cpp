@@ -1,21 +1,22 @@
 #include <bits/stdc++.h>
+#include<utility>
 using namespace std;
 
 pair<int, int> FindmaxMin(int A[], int low, int high)
 {
     if (low == high)
     {
-        return (A[low], A[low]);
+        return make_pair(A[low], A[low]);
     }
     else if (high == low + 1)
     {
         if (A[low] < A[high])
         {
-            return (A[high], A[low]);
+            return make_pair(A[high], A[low]);
         }
         else
         {
-            return (A[low], A[high]);
+            return make_pair(A[low], A[high]);
         }
     }
     else{
@@ -23,8 +24,8 @@ pair<int, int> FindmaxMin(int A[], int low, int high)
         pair<int, int> left = FindmaxMin(A, low, mid);
         pair<int, int> right = FindmaxMin(A, mid+1, high);
         int finalMax=max(left.first,right.first);
-        int finalMin=min(right.first,right.second);
-        return (finalMax, finalMin);
+        int finalMin=min(left.second,right.second);
+        return make_pair(finalMax, finalMin);
     }
 }
 
